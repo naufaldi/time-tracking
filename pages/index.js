@@ -1,33 +1,120 @@
-import Head from "next/head";
+import React, { useEffect, useState } from 'react';
+import Head from 'next/head';
+import Image from 'next/image';
+
+const ImageLogoDarkMode = () => {
+  return (
+    <Image
+      src="/assets/img/logo-dark.png"
+      width={138}
+      height={43}
+      layout="fill"
+      objectFit="cover"
+      alt="Logo Time Tracking"
+    />
+  );
+};
+const ImageLogoLightMode = () => {
+  return (
+    <Image
+      src="/assets/img/Logo.png"
+      width={138}
+      height={43}
+      layout="fill"
+      objectFit="cover"
+      alt="Logo Time Tracking"
+    />
+  );
+};
+
+const ImageIllustrationDarkMode = () => {
+  return (
+    <Image
+      src="/assets/img/Illustration-dark.png"
+      width={620}
+      height={664}
+      layout="fill"
+      objectFit="cover"
+      alt="Illustration Time Tracking"
+    />
+  );
+};
+const ImageIllustrationLightMode = () => {
+  return (
+    <Image
+      src="/assets/img/Illustration.png"
+      width={620}
+      height={664}
+      layout="fill"
+      objectFit="cover"
+      alt="Illustration Time Tracking"
+    />
+  );
+};
 
 export default function Home() {
+  const [darkMode, setDarkMode] = useState(false);
+  const [checked, setChecked] = useState(false);
+  const _handleCheckbox = () => {
+    setDarkMode(!darkMode);
+    setChecked(!checked);
+  };
+  useEffect(() => {
+    if (darkMode) {
+      document.querySelector('html').classList.add('dark');
+    } else {
+      document.querySelector('html').classList.remove('dark');
+    }
+    console.log('Dark Mdoe', darkMode);
+  }, [darkMode]);
   return (
     <>
       <Head>
         <title>Time Tracker</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <header id="hero" className="lg:h-screen w-full bg-gray-500">
+      <header
+        id="hero"
+        className="lg:h-screen w-full bg-gray-500 dark:bg-gray-800"
+      >
         <nav className="max-w-screen-xl mx-auto px-4 grid grid-cols-6 md:grid-cols-12 gap-4 pt-10 items-center">
           <div className="col-span-2 ">
-            <img
-              src="/assets/img/Logo.png"
-              className="mx-4"
-              alt="Logo Time Tracking"
-            />
+            <div className="mx-4 animation-fadeIn-big w-full relative">
+              {darkMode ? <ImageLogoDarkMode /> : <ImageLogoLightMode />}
+            </div>
           </div>
-          <ul className="col-start-5 md:col-start-5 lg:col-start-7 xl:col-start-8 col-span-2  md:col-span-8 lg:col-span-6 xl:col-span-5 flex justify-end text-xl text-dark-200 font-medium">
-            <li className="hidden md:block cursor-pointer hover:underline transition-all mx-4 px-2 ">
+          <ul className="col-start-4 md:col-start-4 lg:col-start-6 xl:col-start-7 col-span-3  md:col-span-9 lg:col-span-7 xl:col-span-6 flex justify-end text-xl text-dark-200 dark:text-gray-200 font-medium">
+            <li className="hidden md:block cursor-pointer hover:underline transition-all mx-4 px-2 animation-fadeIn-bottom delay-anim-75 ">
               Feature
             </li>
-            <li className="hidden md:block cursor-pointer hover:underline transition-all mx-4 px-2 ">
+            <li className="hidden md:block cursor-pointer hover:underline transition-all mx-4 px-2 animation-fadeIn-bottom delay-anim-100 ">
               Pricing
             </li>
-            <li className="hidden md:block cursor-pointer hover:underline transition-all mx-4 px-2 ">
+            <li className="hidden md:block cursor-pointer hover:underline transition-all mx-4 px-2 animation-fadeIn-bottom delay-anim-150">
               Why Gravity
             </li>
-            <li className="hidden md:block cursor-pointer hover:underline transition-all mx-4 px-2 text-acapulco-500">
+            <li className="hidden md:block cursor-pointer hover:underline transition-all mx-4 px-2 text-acapulco-500 animation-fadeIn-bottom delay-anim-200">
               Sign In
+            </li>
+            <li className="hidden md:flex justify-center items-center cursor-pointer hover:underline transition-all mx-4 px-2 text-acapulco-500 animation-fadeIn-bottom delay-anim-200">
+              <label
+                htmlFor="toogleA"
+                className="flex items-center cursor-pointer"
+              >
+                <div className="relative">
+                  <input
+                    id="toogleA"
+                    type="checkbox"
+                    className="hidden"
+                    checked={checked}
+                    onChange={_handleCheckbox}
+                  />
+
+                  <div className="toggle__line w-10 h-4 bg-gray-400 border border-gray-400 rounded-full"></div>
+
+                  <div className="toggle__dot absolute w-6 h-6 bg-white border border-gray-400 rounded-full  bottom-0 left-0"></div>
+                </div>
+              </label>
             </li>
             <li className="block md:hidden w-full">
               <button className="border-2 border-black shadow-sm py-2 px-4 rounded-lg flex items-center tex-xs">
@@ -61,31 +148,33 @@ export default function Home() {
             </li>
           </ul>
         </nav>
-        <div className="grid grid-rows-2 lg:grid-rows-1 lg:grid-cols-2 gap-4 mt-12 md:mt-20   max-w-screen-xl mx-auto px-4 lg:items-center pb-24 md:pb-0">
-          <div className="w-full md:w-10/12  lg:w-full mx-auto flex flex-col justify-start items-start text-dark-500 mt-12 lg:mt-0 px-4 lg:px-0">
-            <h1 className="text-2xl md:text-4xl lg:text-5xl leading-relaxed">
+        <div className="grid grid-rows-2 lg:grid-rows-1 lg:grid-cols-2 gap-4 mt-12 md:mt-20 justify-items-center   max-w-screen-xl mx-auto px-4 lg:items-center pb-24 md:pb-0">
+          <div className="w-6/12 md:w-10/12  lg:w-full mx-auto flex flex-col justify-start items-start text-dark-500 dark:text-gray-300 mt-12 lg:mt-0 px-4 lg:px-0 ">
+            <h1 className="text-2xl md:text-4xl lg:text-5xl leading-relaxed  animation-fadeIn-bottom ">
               Simple time tracking.
               <br /> Powerful reporting.
             </h1>
-            <p className="my-6 text-base md:text-xl lg:text-2xl">
+            <p className="my-6 text-base md:text-xl lg:text-2xl animation-fadeIn-top ">
               Turn your team on to productivity with Gravity the time tracker.
             </p>
             <form className="flex flex-col md:flex-row w-full items-start md:items-center">
               <input
                 type="text"
-                class="text-dark-500 bg-transparent border-2 w-full md:w-7/12 lg:w-5/12 border-black rounded-lg shadow-sm py-3 px-4 md:text-lg"
+                className="text-dark-500 dark:text-gray-300 bg-transparent border-2 w-full md:w-7/12 lg:w-5/12 border-black dark:border-gray-200 rounded-lg shadow-sm dark:shadow-cool-gray-sm py-3 px-4 md:text-lg animation-fadeIn-top  delay-anim-100 "
               />
-              <button className="md:text-lg font-bold border-2 border-black rounded-lg shadow py-3 px-4 bg-acapulco-500 text-white mt-4 md:mt-0 md:mx-4 hover:bg-acapulco-600 hover:border-acapulco-500">
+              <button className="md:text-lg font-bold border-2 border-black dark:border-gray-200 rounded-lg shadow dark:shadow-cool-gray py-3 px-4 bg-acapulco-500 text-white dark:text-gray-100 mt-4 md:mt-0 md:mx-4 hover:bg-acapulco-600 hover:border-acapulco-500 animation-fadeIn-top  delay-anim-200">
                 Request early access
               </button>
             </form>
           </div>
-          <div className="flex items-center justify-center row-start-1 lg:col-start-2">
-            <img
-              src="/assets/img/Illustration.png"
-              alt="Illustration Time Tracking"
-              className="w-full md:w-9/12 lg:w-10/12"
-            />
+          <div className="flex items-center  justify-start sm:justify-center row-start-1 w-6/12 lg:w-auto lg:col-start-2">
+            <div className="w-full md:w-9/12 lg:w-10/12 animation-fadeIn-big flex justify-start">
+              {darkMode ? (
+                <ImageIllustrationDarkMode />
+              ) : (
+                <ImageIllustrationLightMode />
+              )}
+            </div>
           </div>
         </div>
       </header>
