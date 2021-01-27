@@ -93,7 +93,7 @@ export default function Home() {
             <li className="hidden md:block cursor-pointer hover:underline transition-all mx-4 px-2 animation-fadeIn-bottom delay-anim-150">
               Why Gravity
             </li>
-            <li className="hidden md:block cursor-pointer hover:underline transition-all mx-4 px-2 text-acapulco-500 animation-fadeIn-bottom delay-anim-200">
+            <li className="hidden md:block cursor-pointer hover:underline transition-all mx-4 px-2 text-acapulco-900 animation-fadeIn-bottom delay-anim-200">
               Sign In
             </li>
             <li className="flex justify-center items-center cursor-pointer hover:underline transition-all mx-4 px-2 text-acapulco-500 animation-fadeIn-bottom delay-anim-200">
@@ -157,15 +157,19 @@ export default function Home() {
             <p className="my-6 text-base md:text-xl lg:text-2xl animation-fadeIn-top ">
               Turn your team on to productivity with Gravity the time tracker.
             </p>
-            <form className="flex flex-col md:flex-row w-full items-start md:items-center">
+            <label
+              htmlFor="email"
+              className="flex flex-col md:flex-row w-full items-start md:items-center"
+            >
               <input
                 type="text"
+                id="email"
                 className="text-dark-500 dark:text-gray-300 bg-transparent border-2 w-full md:w-7/12 lg:w-5/12 border-black dark:border-gray-200 rounded-lg shadow-sm dark:shadow-cool-gray-sm py-3 px-4 md:text-lg animation-fadeIn-top  delay-anim-100 "
               />
-              <button className="md:text-lg font-bold border-2 border-black dark:border-gray-200 rounded-lg shadow dark:shadow-cool-gray py-3 px-4 bg-acapulco-500 text-white dark:text-gray-100 mt-4 md:mt-0 md:mx-4 hover:bg-acapulco-600 hover:border-acapulco-500 animation-fadeIn-top  delay-anim-200">
+              <button className="md:text-lg font-bold border-2 border-black dark:border-gray-200 rounded-lg shadow dark:shadow-cool-gray py-3 px-4 bg-acapulco-900 text-white dark:text-gray-100 mt-4 md:mt-0 md:mx-4 hover:bg-acapulco-600 hover:border-acapulco-500 animation-fadeIn-top  delay-anim-200">
                 Request early access
               </button>
-            </form>
+            </label>
           </div>
           <div className="flex items-center  justify-start sm:justify-center row-start-1 w-6/12 lg:w-auto lg:col-start-2 mx-auto">
             <div className="w-full md:w-9/12 lg:w-10/12 animation-fadeIn-big flex justify-start">
