@@ -1,56 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
-
-const ImageLogoDarkMode = () => {
-  return (
-    <Image
-      src="/assets/img/logo-dark.png"
-      width={138}
-      height={43}
-      layout="fill"
-      objectFit="cover"
-      alt="Logo Time Tracking"
-    />
-  );
-};
-const ImageLogoLightMode = () => {
-  return (
-    <Image
-      src="/assets/img/Logo.png"
-      width={138}
-      height={43}
-      layout="fill"
-      objectFit="cover"
-      alt="Logo Time Tracking"
-    />
-  );
-};
-
-const ImageIllustrationDarkMode = () => {
-  return (
-    <Image
-      src="/assets/img/Illustration-dark.png"
-      width={620}
-      height={664}
-      layout="fill"
-      objectFit="cover"
-      alt="Illustration Time Tracking"
-    />
-  );
-};
-const ImageIllustrationLightMode = () => {
-  return (
-    <Image
-      src="/assets/img/Illustration.png"
-      width={620}
-      height={664}
-      layout="fill"
-      objectFit="cover"
-      alt="Illustration Time Tracking"
-    />
-  );
-};
+import ImageIllustrationDarkMode from '../component/Image/DarkImage/ImageIllustration';
+import ImageLogoDarkMode from '../component/Image/DarkImage/ImageLogo';
+import ImageLogoLightMode from '../component/Image/LightImage/ImageLogo';
+import ImageIllustrationLightMode from '../component/Image/LightImage/ImageIllustration';
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
