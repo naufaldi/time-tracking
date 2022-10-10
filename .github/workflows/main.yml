@@ -7,32 +7,16 @@ on:
   pull_request:
     branches: 'master'
 
-jobs:
-  validate-yaml:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Validate YAML file
-        run: yamllint main.yml
-        
+jobs:   
   build:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    
     - name: Use Node.js
       uses: actions/setup-node@v3
       with:
         node-version: '16.x'
         cache: 'npm'
-        
-    - name: install dependencies
-      run: npm install
-        
-    - name: create build
+    - run: npm install
     - run: npm run build
-    
-    - name: Echo output
-      run: echo Install packages and creat build
-      
     - run: rm -rf .next
