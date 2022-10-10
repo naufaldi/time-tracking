@@ -21,13 +21,13 @@ jobs:
         node-version: '16.x'
         cache: 'npm'
         
-    - name: Install dependencies
-      run: |
-        npm install
-        echo Installed npm packages ...
+    - name: install dependencies
+      run: npm install
         
-    - name: Build
-    - run: |
-        npm run build
-        echo Build is done ...
+    - name: create build
+    - run: npm run build
+    
+    - name: Echo output
+      run: echo Install packages and creat build
+      
     - run: rm -rf .next
