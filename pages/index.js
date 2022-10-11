@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
-import Button from '../component/button/button';
-import Input from '../component/input/input';
+import Button from '../component/Button/Button';
+import Input from '../component/Input/Input';
 import ImageIllustrationDarkMode from '../component/Image/DarkImage/ImageIllustration';
 import ImageLogoDarkMode from '../component/Image/DarkImage/ImageLogo';
 import ImageLogoLightMode from '../component/Image/LightImage/ImageLogo';
