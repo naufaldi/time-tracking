@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
+import Button from '../component/Button/Button';
+import Input from '../component/Input/Input';
 import ImageIllustrationDarkMode from '../component/Image/DarkImage/ImageIllustration';
 import ImageLogoDarkMode from '../component/Image/DarkImage/ImageLogo';
 import ImageLogoLightMode from '../component/Image/LightImage/ImageLogo';
@@ -71,7 +73,7 @@ export default function Home() {
               </label>
             </li>
             <li className="block md:hidden w-full">
-              <button className="border-2 border-black dark:border-gray-400 shadow-sm dark:shadow-cool-gray-sm py-2 px-4 rounded-lg flex items-center tex-xs">
+              <Button className="flex items-center text-xs">
                 <svg
                   className="mr-4 fill-current text-black dark:text-gray-400"
                   width="12"
@@ -98,7 +100,7 @@ export default function Home() {
                   />
                 </svg>
                 Menu
-              </button>
+              </Button>
             </li>
           </ul>
         </nav>
@@ -115,14 +117,14 @@ export default function Home() {
               htmlFor="email"
               className="flex flex-col md:flex-row w-full items-start md:items-center"
             >
-              <input
+              <Input
                 type="text"
                 id="email"
-                className="text-dark-500 dark:text-gray-300 bg-transparent border-2 w-full md:w-7/12 lg:w-5/12 border-black dark:border-gray-200 rounded-lg shadow-sm dark:shadow-cool-gray-sm py-3 px-4 md:text-lg animation-fadeIn-top  delay-anim-100 "
+                className="w-full md:w-7/12 lg:w-5/12 md:text-lg animation-fadeIn-top  delay-anim-100 "
               />
-              <button className="md:text-lg font-bold border-2 border-black dark:border-gray-200 rounded-lg shadow dark:shadow-cool-gray py-3 px-4 bg-acapulco-900 text-white dark:text-gray-100 mt-4 md:mt-0 md:mx-4 hover:bg-acapulco-600 hover:border-acapulco-500 animation-fadeIn-top  delay-anim-200">
+              <Button className="md:text-lg font-bold dark:border-gray-200 shadow dark:shadow-cool-gray py-3 px-4 bg-acapulco-900 text-white dark:text-gray-100 mt-4 md:mt-0 md:mx-4 hover:bg-acapulco-600 hover:border-acapulco-500 animation-fadeIn-top delay-anim-200">
                 Request early access
-              </button>
+              </Button>
             </label>
           </div>
           <div className="flex items-center  justify-start sm:justify-center row-start-1 w-6/12 lg:w-auto lg:col-start-2 mx-auto">
