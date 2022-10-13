@@ -2,6 +2,7 @@ import React from "react";
 import Button from "../Button/Button";
 import ImageLogoDarkMode from "../Image/DarkImage/ImageLogo";
 import ImageLogoLightMode from "../Image/LightImage/ImageLogo";
+import { MenuItem } from "../menuItem";
 
 export const Navbar = ({ darkMode, checked, _handleCheckbox }) => {
     return (
@@ -12,18 +13,13 @@ export const Navbar = ({ darkMode, checked, _handleCheckbox }) => {
                 </div>
             </div>
             <ul className=" md:col-start-4 lg:col-start-6 xl:col-start-7 col-span-4 sm:col-span-3  md:col-span-9 lg:col-span-7 xl:col-span-6 flex justify-end text-xl text-dark-200 dark:text-gray-200 font-medium">
-                <li className="hidden md:block cursor-pointer hover:underline transition-all mx-4 px-2 animation-fadeIn-bottom delay-anim-75 ">
-                    Feature
-                </li>
-                <li className="hidden md:block cursor-pointer hover:underline transition-all mx-4 px-2 animation-fadeIn-bottom delay-anim-100 ">
-                    Pricing
-                </li>
-                <li className="hidden md:block cursor-pointer hover:underline transition-all mx-4 px-2 animation-fadeIn-bottom delay-anim-150">
-                    Why Gravity
-                </li>
-                <li className="hidden md:block cursor-pointer hover:underline transition-all mx-4 px-2 text-acapulco-900 animation-fadeIn-bottom delay-anim-200">
+                <MenuItem animationDelay="75ms">Feature</MenuItem>
+                <MenuItem animationDelay="100ms">Pricing</MenuItem>
+                <MenuItem animationDelay="150ms">Why Gravity</MenuItem>
+                <MenuItem animationDelay="200ms" color="hsl(205,24%,42%)">
                     Sign In
-                </li>
+                </MenuItem>
+
                 <li className="flex justify-center items-center cursor-pointer hover:underline transition-all mx-4 px-2 text-acapulco-500 animation-fadeIn-bottom delay-anim-200">
                     <label htmlFor="toogleA" className="flex items-center cursor-pointer">
                         <div className="relative">
